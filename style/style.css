@@ -1,0 +1,108 @@
+.name-container
+{
+
+    position: relative;
+    height: 100vh;
+    background-image: url("../images/background2.jpg");
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: 100vw 100vh;
+    margin: 0;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.inner-name-container
+{
+    text-align: center;
+    position: relative;
+    width: 350px;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(10px 10px 4px #3c3c3f);
+}
+
+.name-holder
+{
+    position: absolute;
+    width:300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.name
+{
+    position: absolute;
+    font-family: "Dancing Script", serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*padding: 10px 16px;*/
+nav{
+    position: sticky;
+    top: 0;
+    color: rgb(144, 157, 164);
+    z-index: 100;
+}
+
+nav > ul{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 35px;
+}
+
+nav > ul > li
+{
+    margin: 15px;
+    list-style: none;
+    font-family: "Dancing Script", serif;
+}
+
+.section-header
+{
+    text-align: left;
+    margin: 14px;
+    padding: 30px;
+
+}
+/*
+    margin: 0px 15px 10px 15px;
+    background-color: #2b2b37;
+    border-radius: 10px;
+*/
+.project-section
+{
+
+    color: white;
+}
+
+.card-container
+{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+
+.card-container > div
+{
+    margin: 20px;
+    width: 350px;
+    height: 310px;
+    border-radius: 10px;
+    background-color: azure;
+    color: #0c0c12;
+}
+
+html{
+    background-color: #0c0c12;
+}
+
+
