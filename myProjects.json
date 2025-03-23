@@ -1,0 +1,37 @@
+{
+    "projects":
+    [{
+    "name": "MickeyMailer",
+    "img": "",
+    "description":"During my Studies taking a technical fourth year, we got assigned to solve problems that teachers themelves experienced in their day to day life \n. In our case an automatic reminder via mail at regular intervalls. It was an example of how consutling work was like where the teacher were treated as a client to add to realism."
+    },
+    {
+        "name": "Website For School",
+        "description": "this project took me while to do! 2"
+    },
+    {
+        "name": "PokeDex",
+        "description": "this project took me while to do! 3"
+    },
+    {
+        "name": "Intenship OnBoarding Project",
+        "description": "this project took me while to do! 4"
+    },
+    {
+        "name": "BaseCamp",
+        "description": "this project took me while to do! 5"
+    },
+    {
+        "name": "Intrussion system prototype",
+        "description": "this project took me while to do! 6"
+    },
+    {
+        "name": "This Site!",
+        "description": "this project took me while to do! 7"
+    },
+    {
+        "name": "Website for a Choir",
+        "description": "this project took me while to do! 8"
+    }
+    ]
+}
