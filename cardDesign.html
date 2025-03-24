@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href ="style/style.css">
+        <link rel = "stylesheet" href = "style/fonts.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap');
+        </style>
+    </head>
+    <body>
+
+        <div class = "inner-card-container">
+            <div class ="project-card">
+                <div class="neuton-bold">
+                    <h1>Security Camera</h1>
+                </div>
+                <div class="neuton-light">
+                    <div class = "card-description">
+                        Lorem ipsum dolor sit amet, consectetu
+                        adipiscing elit. Duis vulputate elit quis lectus finibus vehicula.
+                        Integer condimentum vehicula ante sed tincidunt. Pellentesque lobortis
+                        suscipit sapiens. Donec nisl lacus, lobortis a tortor ut, eleifend vulputate ipsum.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id ="inject">
+
+        </div>
+
+        <script>
+            window.addEventListener("load", (async()=>{
+                let elem = document.getElementsByClassName("inner-card-container")[0];
+                let description = document.getElementsByClassName("card-description")[0];
+                elem.addEventListener("mouseenter", ()=>{
+                    description.style.marginTop = "0px"; 
+                    description.style.opacity = 1;
+                });
+                elem.addEventListener("mouseleave", ()=>{
+                    description.style.marginTop = "200px"; 
+                    description.style.opacity = 0;
+                });
+               
+            }));
+        
+        </script>
+   
+    </body>
+</html>
