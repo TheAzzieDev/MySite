@@ -25,10 +25,35 @@ function accessProjectContent()
 function createProjectItem(index)
 {
     let name = projects[index]["name"];  
-    elem = document.createElement("div");
-    description = document.createTextNode(projects[index]["description"]);
-    elem.appendChild(description);
-    container.appendChild(elem);
+    let description = projects[index]["description"];
+
+    let newCard = document.createElement("div");
+    newCard.classList.add("project-card");
+    newCard.innerHTML = 
+    `
+    <a style="text-decoration: none;">
+    <div class="neuton-bold">
+        <h1>${name}</h1>
+    </div>
+    <div class="neuton-light">
+        <div class = "card-description">
+            ${description}
+        </div>
+    </div>
+    </a>
+    `
+
+    let cardDescription = newCard.getElementsByClassName("card-description")[0];
+    newCard.addEventListener("mouseenter", ()=> {
+        cardDescription.style.marginTop = "0px";
+        cardDescription.style.opacity = 1;
+    });
+    newCard.addEventListener("mouseleave", ()=>{
+        cardDescription.style.marginTop = "200px"; 
+        cardDescription.style.opacity = 0;
+    });
+
+    container.appendChild(newCard);
 }
 
 function rightArrow()
@@ -142,9 +167,15 @@ document.getElementById("Navbar").addEventListener("click", (e)=>
     e.preventDefault();
     if(e.target && e.target.nodeName == "LI")
     {
-        document.getElementById(e.target.innerHTML).scrollIntoView({
-            behavior: "smooth"
-        });
+        if(e.target.id == "services")
+            openModal("services-modal");
+        else
+        {
+           document.getElementById(e.target.innerHTML).scrollIntoView({
+                behavior: "smooth"
+            }); 
+        }
+            
     }
 });
 
