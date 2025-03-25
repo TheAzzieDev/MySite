@@ -1,0 +1,51 @@
+@media(max-width: 700px)
+{
+    nav > ul{
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 1400px)
+{
+.skill-container
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 600px)
+{
+    .info
+    {
+        font-size: 17px;
+    }
+    .button-container
+    {
+        width: 350px;
+    }
+}
+
+@media (max-width: 1080px)
+{
+    .socials
+    {
+        font-size: small;
+    }
+    .modal
+    {
+        width: 70%
+    }
+}
+
+@media (max-width: 460px)
+{
+    .modal
+    {
+        width: 95%;
+    }
+    
+}

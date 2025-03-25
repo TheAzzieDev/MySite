@@ -15,12 +15,11 @@ function accessProjectContent()
     let elem;
     let node;
 
-    for(let i = 0; i < 3; i++)
+    for(let i = 0; i < deviceMaxItemSize; i++)
     {
         createProjectItem(i);
     }
 }
-
 
 function createProjectItem(index)
 {
@@ -32,14 +31,14 @@ function createProjectItem(index)
     newCard.innerHTML = 
     `
     <a style="text-decoration: none;">
-    <div class="neuton-bold">
-        <h1>${name}</h1>
-    </div>
-    <div class="neuton-light">
-        <div class = "card-description">
-            ${description}
+        <div class="neuton-bold">
+            <h1 class = "card-title">${name}</h1>
         </div>
-    </div>
+        <div class="neuton-light">
+            <div class = "card-description">
+                ${description}
+            </div>
+        </div>
     </a>
     `
 
@@ -56,17 +55,35 @@ function createProjectItem(index)
     container.appendChild(newCard);
 }
 
+function deleteChildren(itemsToRemove)
+{
+    let children = container.getElementsByClassName("project-card");
+
+    for(let i = 0; i < itemsToRemove; i++)
+    {
+        container.removeChild(children[0]);
+    }
+}
+
+function reloadChildren()
+{
+    deleteChildren(displayItemSize);
+    currentIndex = currentIndex == 0 ? 0 : currentIndex - displayItemSize;
+    for(let i = 0; i < deviceMaxItemSize; i++)
+    {
+        createProjectItem(currentIndex++)
+    }
+    displayItemSize = deviceMaxItemSize;
+}
+
 function rightArrow()
 {
     if(size > deviceMaxItemSize){
-        let children = container.getElementsByTagName("div");
-
-        for(let i = 0; i < displayItemSize; i++)
-            container.removeChild(children[0]);
+        deleteChildren(displayItemSize)
 
         if(currentIndex + 1 <= size)
         {
-            itemsToAdd = (size - currentIndex > deviceMaxItemSize) ? 3 : size - currentIndex;
+            itemsToAdd = (size - currentIndex > deviceMaxItemSize) ? deviceMaxItemSize : size - currentIndex;
             currentIndex = (currentIndex == 0) ? displayItemSize : currentIndex;
            
             //create projects
@@ -100,11 +117,9 @@ function leftArrow()
     let itemSpaceEnd;
     
     if(size > deviceMaxItemSize){
-        let children = container.getElementsByTagName("div");
-        for(let i = 0; i < displayItemSize; i++)
-        {
-            container.removeChild(children[0]);
-        }
+
+        deleteChildren(displayItemSize)
+
         if(currentIndex - 1 < 0 || currentIndex - displayItemSize == 0)
         {
             //create projects
@@ -157,10 +172,29 @@ window.addEventListener("load", (async()=>{
         console.log("An error occured while fetching project data: ", error);
     });
     container = document.getElementsByClassName("inner-card-container")[0];
-    console.log(container);
     accessProjectContent();
 
 }));
+
+window.addEventListener("resize", ()=>{
+    if(screen.width > 1485)
+        {
+        deviceMaxItemSize = 3;
+        reloadChildren();
+    }
+
+    if(screen.width < 1485)
+        {
+        deviceMaxItemSize = 2;
+        reloadChildren();
+    }
+
+    if(screen.width < 1000)
+        {
+        deviceMaxItemSize = 1;
+        reloadChildren();
+    }
+});
 
 document.getElementById("Navbar").addEventListener("click", (e)=>
 {
@@ -178,6 +212,10 @@ document.getElementById("Navbar").addEventListener("click", (e)=>
             
     }
 });
+
+
+
+
 
 
 
