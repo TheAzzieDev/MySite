@@ -15,7 +15,7 @@ function configureProjects(updateChildren)
         updateChildren();
     }
 
-    if(screen.width < 1485)
+    if(screen.width < 1485 && screen.width > 1000)
         {
         deviceMaxItemSize = 2;
         updateChildren();
@@ -26,20 +26,17 @@ function configureProjects(updateChildren)
         deviceMaxItemSize = 1;
         updateChildren();
     }
+    
 }
 
 function accessProjectContent()
 {
     projects = elementData["projects"];
-    let name;
-    let description;
-    let elem;
-    let node;
-
     for(let i = 0; i < deviceMaxItemSize; i++)
     {
-        createProjectItem(i);
+        createProjectItem(currentIndex++);
     }
+    displayItemSize = deviceMaxItemSize;
 }
 
 function createProjectItem(index)
@@ -77,9 +74,9 @@ function createProjectItem(index)
         cardDescription.style.opacity = 0;
     });
 
-    newCard.addEventListener("click", ()=>{
-        window.open(url, '_blank');
-    });
+    //newCard.addEventListener("click", ()=>{
+    //    window.open(url, '_blank');
+    //});
 
     container.appendChild(newCard);
 }
@@ -205,6 +202,7 @@ window.addEventListener("load", (async()=>{
     });
     container = document.getElementsByClassName("inner-card-container")[0];
     configureProjects(accessProjectContent);
+
 }));
 
 window.addEventListener("resize", ()=>{
