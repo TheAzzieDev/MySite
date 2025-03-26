@@ -74,9 +74,9 @@ function createProjectItem(index)
         cardDescription.style.opacity = 0;
     });
 
-    //newCard.addEventListener("click", ()=>{
-    //    window.open(url, '_blank');
-    //});
+    newCard.addEventListener("click", ()=>{
+        window.open(url, '_blank');
+    });
 
     container.appendChild(newCard);
 }
