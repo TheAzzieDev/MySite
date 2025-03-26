@@ -54,7 +54,6 @@ function createProjectItem(index)
     newCard.style.backgroundPosition = "center";
     newCard.innerHTML = 
     `
-    <a href ="${url}" target = "_blank" style="text-decoration: none; color: white">
         <div class="neuton-bold">
             <h1 class = "card-title">${name}</h1>
         </div>
@@ -63,7 +62,7 @@ function createProjectItem(index)
                 ${description}
             </div>
         </div>
-    </a>
+
     `
    
     let cardDescription = newCard.getElementsByClassName("card-description")[0];
