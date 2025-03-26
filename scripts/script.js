@@ -3,7 +3,7 @@ let elementData;
 let currentIndex = 0;
 let size;
 let displayItemSize = 3;
-let deviceMaxItemSize = 3; //THIS WILL BE CHANGED DEPENDING ON THE DEVICE!
+let deviceMaxItemSize; //THIS WILL BE CHANGED DEPENDING ON THE DEVICE!
 let projects;
 let itemsToAdd;
 
@@ -76,7 +76,7 @@ function createProjectItem(index)
         cardDescription.style.marginTop = "200px"; 
         cardDescription.style.opacity = 0;
     });
-    
+
     newCard.addEventListener("click", ()=>{
         window.open(url, '_blank');
     });
@@ -205,7 +205,6 @@ window.addEventListener("load", (async()=>{
     });
     container = document.getElementsByClassName("inner-card-container")[0];
     configureProjects(accessProjectContent);
-
 }));
 
 window.addEventListener("resize", ()=>{
