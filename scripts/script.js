@@ -7,6 +7,27 @@ let deviceMaxItemSize = 3; //THIS WILL BE CHANGED DEPENDING ON THE DEVICE!
 let projects;
 let itemsToAdd;
 
+function configureProjects(updateChildren)
+{
+    if(screen.width > 1485)
+        {
+        deviceMaxItemSize = 3;
+        updateChildren();
+    }
+
+    if(screen.width < 1485)
+        {
+        deviceMaxItemSize = 2;
+        updateChildren();
+    }
+
+    if(screen.width < 1000)
+        {
+        deviceMaxItemSize = 1;
+        updateChildren();
+    }
+}
+
 function accessProjectContent()
 {
     projects = elementData["projects"];
@@ -170,8 +191,11 @@ function closeModal(elemName)
 }
 
 
+
+
+
 window.addEventListener("load", (async()=>{
-    await fetch("https://theazziedev.github.io/MySite/myProjects.json").then(async(data) =>{
+    await fetch("http://127.0.0.1:5500/myProjects.json").then(async(data) =>{
         elementData = await data.json();
         size = elementData["projects"].length;
     })
@@ -179,28 +203,12 @@ window.addEventListener("load", (async()=>{
         console.log("An error occured while fetching project data: ", error);
     });
     container = document.getElementsByClassName("inner-card-container")[0];
-    accessProjectContent();
+    configureProjects(accessProjectContent);
 
 }));
 
 window.addEventListener("resize", ()=>{
-    if(screen.width > 1485)
-        {
-        deviceMaxItemSize = 3;
-        reloadChildren();
-    }
-
-    if(screen.width < 1485)
-        {
-        deviceMaxItemSize = 2;
-        reloadChildren();
-    }
-
-    if(screen.width < 1000)
-        {
-        deviceMaxItemSize = 1;
-        reloadChildren();
-    }
+    configureProjects(reloadChildren);
 });
 
 document.getElementById("Navbar").addEventListener("click", (e)=>
