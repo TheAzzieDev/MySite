@@ -171,7 +171,7 @@ function closeModal(elemName)
 
 
 window.addEventListener("load", (async()=>{
-    await fetch("http://127.0.0.1:5500/myProjects.json").then(async(data) =>{
+    await fetch("https://theazziedev.github.io/myProjects.json").then(async(data) =>{
         elementData = await data.json();
         size = elementData["projects"].length;
     })
