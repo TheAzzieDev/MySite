@@ -57,19 +57,16 @@ function createProjectItem(index)
     newCard.style.backgroundPosition = "center";
     newCard.innerHTML = 
     `
-    <a style="text-decoration: none; color: white;>
-        <div class="neuton-bold">
-            <h1 class = "card-title">${name}</h1>
+    <div class="neuton-bold">
+        <h1 class = "card-title">${name}</h1>
+    </div>
+    <div class="neuton-light">
+        <div class = "card-description">
+            ${description}
         </div>
-        <div class="neuton-light">
-            <div class = "card-description">
-                ${description}
-            </div>
-        </div>
-    </a>
+    </div>
     `
-    newCard.getElementsByTagName("a")[0].href = url;
-    newCard.getElementsByTagName("a")[0].target = "_blank";
+   
     let cardDescription = newCard.getElementsByClassName("card-description")[0];
     newCard.addEventListener("mouseenter", ()=> {
         cardDescription.style.marginTop = "0px";
@@ -78,6 +75,10 @@ function createProjectItem(index)
     newCard.addEventListener("mouseleave", ()=>{
         cardDescription.style.marginTop = "200px"; 
         cardDescription.style.opacity = 0;
+    });
+    
+    newCard.addEventListener("click", ()=>{
+        window.open(url, '_blank');
     });
 
     container.appendChild(newCard);
