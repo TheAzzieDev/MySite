@@ -1,51 +1,45 @@
 {
     "projects":
     [{
-    "name": "MickeyMailer",
-    "img": "",
-    "url": "",
-    "description":"During my Studies taking a technical fourth year, we got assigned to solve problems that teachers themelves experienced in their day to day life \n. In our case an automatic reminder via mail at regular intervalls. It was an example of how consutling work was like where the teacher were treated as a client to add to realism."
+        "name": "MickeyMailer",
+        "img": "images/projects/mickeymailer.png",
+        "url": "https://www.youtube.com/watch?v=A1EjvWwVwFg",
+        "description":"During my Studies taking a technical fourth year, we got assigned to solve problems that teachers themelves experienced in their day to day life \n. In our case an automatic reminder via mail at regular intervalls. It was an example of how consutling work was like where the teacher were treated as a client to add to realism."
     },
     {
         "name": "Website For School",
-        "img": "",
-        "url": "",
-        "description": "this project took me while to do! 2"
+        "img": "images/projects/te4site.png",
+        "url": "https://te4ntihbg.se/23_24/index.html",
+        "description": "Me and my entire class from my previous education created a website for advertising purpose for our schools instutio. When they advertise to different schools and what not they use website that previous students have created"
     },
     {
         "name": "PokeDex",
-        "img": "",
-        "url": "",
-        "description": "this project took me while to do! 3"
+        "img": "images/projects/pokeNetX.png",
+        "url": "https://te4ntihbg.se/23_24/indivproject.html?project=pokinetx",
+        "description": "Sadly no code available. The site was aabout pokemons where you could favourite pokemons and compare their stats from your account. The project utilizes react, node and sqlite3 togeter with pokemom rest API"
     },
     {
-        "name": "Intenship OnBoarding Project",
-        "img": "",
-        "url": "",
-        "description": "this project took me while to do! 4"
+        "name": "Intenship Onboarding Project",
+        "img": "images/projects/onboardingProject.png",
+        "url": "https://www.youtube.com/watch?v=wFHce44lJDc",
+        "description": "An onboarding project given by animals.ai, that uses yolo object detection in combination with flask to count detected objects in pictures alongside creating a table with accuracy for each one of these objects."
     },
     {
         "name": "BaseCamp",
-        "img": "",
-        "url": "",
-        "description": "this project took me while to do! 5"
+        "img": "images/projects/basecamp.png",
+        "url": "https://www.youtube.com/watch?v=3-cLZPacMpo",
+        "description": "A website where teachers can upload their course material, This project has been ongoing for awhile sadly due to the time frame being rather short aswell as inexperiency with php the website was not finnished"
     },
     {
         "name": "Intrussion system prototype",
-        "img": "",
-        "url": "",
-        "description": "this project took me while to do! 6"
+        "img": "images/projects/securityCamera.png",
+        "url": "https://www.youtube.com/watch?v=Y6iLE96YYf0",
+        "description": "A prototype for how a security camera system utilizing yolo object detection can look like, where the project utilizes object detection with yolo alongside flask."
     },
     {
         "name": "This Site!",
-        "img": "",
-        "url": "",
-        "description": "this project took me while to do! 7"
-    },
-    {
-        "name": "Website for a Choir",
-        "img": "",
-        "url": "",
-        "description": "this project took me while to do! 8"
+        "img": "images/projects/mySite.png",
+        "url": "https://github.com/TheAzzieDev/MySite",
+        "description": "this project took me while to do! I made this site during an academic break from my studies. Check out the code on github! " 
     }]
 }

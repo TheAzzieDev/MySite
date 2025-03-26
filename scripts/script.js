@@ -25,12 +25,18 @@ function createProjectItem(index)
 {
     let name = projects[index]["name"];  
     let description = projects[index]["description"];
+    let url = projects[index]["url"];
+    let src = projects[index]["img"];
+    
 
     let newCard = document.createElement("div");
+
     newCard.classList.add("project-card");
+    newCard.style.backgroundImage = "url(" + src  + ")";
+    newCard.style.backgroundPosition = "center";
     newCard.innerHTML = 
     `
-    <a style="text-decoration: none;">
+    <a style="text-decoration: none; color: white;>
         <div class="neuton-bold">
             <h1 class = "card-title">${name}</h1>
         </div>
@@ -41,7 +47,8 @@ function createProjectItem(index)
         </div>
     </a>
     `
-
+    newCard.getElementsByTagName("a")[0].href = url;
+    newCard.getElementsByTagName("a")[0].target = "_blank";
     let cardDescription = newCard.getElementsByClassName("card-description")[0];
     newCard.addEventListener("mouseenter", ()=> {
         cardDescription.style.marginTop = "0px";
